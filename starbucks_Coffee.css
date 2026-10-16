@@ -1,0 +1,458 @@
+/* 기본 초기화 (CSS Reset) */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 서브 타이틀 */
+.container {
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+  overflow-x: hidden;
+  margin-top: 148px;
+}
+.sub_tit_wrap {
+  width: 100%;
+  height: 90px;
+  background-color: #ffffff;
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 18px;
+  border: 0;
+  padding: 0;
+}
+.sub_tit_inner {
+  width: 1100px;
+  height: 91px;
+  align-items: center;
+  justify-items: left;
+  top: 0px;
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+
+  position: relative;
+}
+.h2 {
+  width: 1100px;
+  height: 71.6px;
+  padding: 30px;
+}
+.smap {
+  color: #666666;
+  width: 84.68px;
+  height: 16px;
+  font: 16px;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  list-style: none;
+  display: flex;
+}
+.smap :nth-child(1) {
+  vertical-align: top;
+  max-width: 100%;
+  width: 15px;
+  height: 16px;
+  margin: 0 2.5px;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  line-height: 16px;
+}
+.smap :nth-child(2) {
+  vertical-align: top;
+  position: relative;
+  top: 2px;
+  float: left;
+  max-width: 100%;
+  width: 6px;
+  height: 16px;
+  margin: 0 2.5px;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  line-height: 16px;
+}
+.smap :nth-child(3) {
+  color: #222222;
+  vertical-align: top;
+  font-size: 12px;
+  max-width: 100%;
+  width: 48.67px;
+  height: 14px;
+  margin: 0 2.5px;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   서브 슬라이드 영역 (스타벅스 코리아 공식 bxslider 스타일)
+   ========================================================================== */
+.slider-container {
+  width: 100%;
+  height: 400px;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  min-width: 320px;
+}
+
+/* 슬라이드 묶음 (Fade 전환) */
+.slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 1s ease-in-out,
+    visibility 1s ease-in-out;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  height: 400px;
+  width: 2000px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+  display: block;
+  cursor: pointer;
+}
+
+/* 좌/우 화살표 버튼 */
+.slide_arrow {
+  position: absolute;
+  top: 175px;
+  z-index: 5;
+  margin: 0;
+  padding: 0;
+}
+
+#prevBtn {
+  left: 3%;
+}
+
+#nextBtn {
+  right: 3%;
+}
+
+.slide_arrow a {
+  display: block;
+  width: 55px;
+  height: 55px;
+  position: relative;
+}
+
+.slide_arrow a img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 55px;
+  height: 55px;
+  display: block;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide_arrow a img.arrow_on {
+  opacity: 0;
+}
+
+.slide_arrow a:hover img.arrow_on {
+  opacity: 1;
+}
+
+/* 하단 컨트롤 & 페이저 (정지/재생 + 1/2 인디케이터 점) */
+.coffee_slider_control_pager {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.coffee_slider_controls {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+}
+
+.coffee_slider_controls a {
+  display: block;
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+
+.coffee_slider_controls a.bx-stop {
+  background: url("https://image.istarbucks.co.kr/common/img/coffee/icon/pause.png")
+    no-repeat 0 0;
+}
+
+.coffee_slider_controls a.bx-start {
+  background: url("https://image.istarbucks.co.kr/common/img/coffee/icon/play.png")
+    no-repeat 0 0;
+}
+
+.coffee_slider_pagers {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.coffee_slider_pagers a.pager-btn {
+  display: block;
+  width: 15px;
+  height: 15px;
+  overflow: hidden;
+  text-indent: -9999px;
+  cursor: pointer;
+  background: url("https://image.istarbucks.co.kr/common/img/coffee/icon/visual_off.png")
+    no-repeat 0 0;
+}
+
+.coffee_slider_pagers a.pager-btn.active {
+  background: url("https://image.istarbucks.co.kr/common/img/coffee/icon/visual_on.png")
+    no-repeat 0 0;
+}
+
+/* 하단 메인부 */
+
+.story {
+  position: relative;
+  width: 100%;
+  height: 430px;
+  display: block;
+  background: url("https://image.istarbucks.co.kr/img/event/2022/coffee_hs_bg_221116.jpg")
+    50% 50% no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  overflow: hidden;
+}
+
+.reserve {
+  position: relative;
+  width: 100%;
+  height: 430px;
+  display: block;
+  background: url("https://www.starbucks.co.kr/common/img/coffee/coffee_reserve_wrap_bg.jpg")
+    50% 50% no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  overflow: hidden;
+}
+
+.drink {
+  position: relative;
+  width: 100%;
+  height: 430px;
+  display: block;
+  background: url("https://www.starbucks.co.kr/common/img/coffee/coffee_espresso_wrap_bg.jpg")
+    50% 50% no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  overflow: hidden;
+}
+
+.enjoy {
+  position: relative;
+  width: 100%;
+  height: 430px;
+  display: block;
+  background: url("https://www.starbucks.co.kr/common/img/coffee/coffee_best_wrap_bg.jpg")
+    50% 50% no-repeat;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  overflow: hidden;
+}
+
+/* 하단부 텍스트 이미지들 */
+
+.text1 {
+  position: absolute;
+  right: 150px;
+  top: 150px;
+  width: 341px;
+}
+
+.text2 {
+  position: absolute;
+  left: 150px;
+  top: 150px;
+  width: 341px;
+}
+/* 커피 이야기 영역 내 버튼 위치 지정 */
+.story .coffee_hs_btn {
+  position: absolute;
+  right: 370px; /* 텍스트 위치에 맞춰 조절 */
+  bottom: 90px; /* 원하는 세로 위치로 조절 */
+  width: 121px;
+  height: 34px;
+  line-height: 34px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.story .coffee_hs_btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  transition:
+    background-color 0.7s,
+    color 0.7s;
+}
+.story .coffee_hs_btn a:hover {
+  background-color: #ffffff;
+  color: #222222;
+  text-decoration: underline; /* 밑줄 긋기 */
+  text-decoration-thickness: 1.7px;
+  /* text-underline-offset: 4px; 글자와 밑줄 사이 간격 띄우기 (선택 사항) */
+}
+.drink .coffee_hs_btn {
+  position: absolute;
+  right: 370px; /* 텍스트 위치에 맞춰 조절 */
+  bottom: 90px; /* 원하는 세로 위치로 조절 */
+  width: 121px;
+  height: 34px;
+  line-height: 34px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.drink .coffee_hs_btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #ffffff;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  transition:
+    background-color 0.7s,
+    color 0.7s;
+}
+.drink .coffee_hs_btn a:hover {
+  background-color: #ffffff;
+  color: #222222;
+  text-decoration: underline; /* 밑줄 긋기 */
+  text-decoration-thickness: 1.7px;
+  /* text-underline-offset: 4px; 글자와 밑줄 사이 간격 띄우기 (선택 사항) */
+}
+.reserve .coffee_hs_btn {
+  position: absolute;
+  left: 150px; /* 텍스트 위치에 맞춰 조절 */
+  bottom: 90px; /* 원하는 세로 위치로 조절 */
+  width: 121px;
+  height: 34px;
+  line-height: 34px;
+  border: 2px solid #222;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.reserve .coffee_hs_btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #222;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  transition:
+    background-color 0.7s,
+    color 0.7s;
+}
+.reserve .coffee_hs_btn a:hover {
+  background-color: #222;
+  color: #fff;
+  text-decoration: underline; /* 밑줄 긋기 */
+  text-decoration-thickness: 1.7px;
+  /* text-underline-offset: 4px; 글자와 밑줄 사이 간격 띄우기 (선택 사항) */
+}
+.enjoy .coffee_hs_btn {
+  position: absolute;
+  left: 150px; /* 텍스트 위치에 맞춰 조절 */
+  bottom: 90px; /* 원하는 세로 위치로 조절 */
+  width: 121px;
+  height: 34px;
+  line-height: 34px;
+  border: 2px solid #222;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+.enjoy .coffee_hs_btn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #222;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  transition:
+    background-color 0.7s,
+    color 0.7s;
+}
+.enjoy .coffee_hs_btn a:hover {
+  background-color: #222;
+  color: #fff;
+  text-decoration: underline; /* 밑줄 긋기 */
+  text-decoration-thickness: 1.7px;
+  /* text-underline-offset: 4px; 글자와 밑줄 사이 간격 띄우기 (선택 사항) */
+}

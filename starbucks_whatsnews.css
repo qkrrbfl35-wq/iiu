@@ -1,0 +1,735 @@
+body {
+  font-family:
+    "nbg", "맑은 고딕", HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+  font-size: 1em;
+  line-height: 1;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  text-decoration: none;
+  vertical-align: baseline;
+  color: #666;
+  background: transparent;
+  cursor: pointer;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 맨위에 배너  */
+#wrap {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+/* 본문 전체 */
+#container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+/* WHAT'S NEW 타이틀 */
+.sub_tit_wrap {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 35px;
+}
+
+.sub_tit_inner {
+  width: 1100px;
+  height: 98px;
+  margin: 0 auto;
+  position: relative;
+}
+/* WHAT'S NEW 글자 */
+.sub_tit_wrap h2 {
+  font:
+    bold 36px Avenir,
+    Arial,
+    georgia;
+  color: #222222;
+  padding-top: 30px;
+  position: relative;
+}
+/* WHAT'S NEW 타이틀 오른쪽 아이콘 */
+ul.smap {
+  position: absolute;
+  right: 0;
+  top: 60px;
+}
+ul.smap > li > .icon_home:hover {
+  cursor: pointer;
+}
+
+ul.smap > .en:hover {
+  cursor: pointer;
+}
+ul.smap > li {
+  float: left;
+  line-height: 14px;
+  margin: 0 3px;
+}
+
+ul > li {
+  list-style: none;
+}
+
+ul.smap > li:nth-child(3) {
+  font-size: 12px;
+  color: #666666;
+}
+/* 슬라이드 쇼 */
+.hcg-slider {
+  width: 100%;
+  text-align: center;
+}
+
+.hcg-slide-container {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hcg-slider-track {
+  width: 100%;
+  height: 100%;
+}
+
+.hcg-slides {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.hcg-slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 좌우 화살표 */
+#hcg-slide-prev,
+#hcg-slide-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hcg-slide-prev {
+  left: 55px;
+}
+
+#hcg-slide-next {
+  right: 55px;
+}
+
+/* 화살표에 마우스를 올렸을 때 */
+#hcg-slide-prev:hover,
+#hcg-slide-next:hover {
+  background-color: white;
+  transition: all 0.5s ease;
+}
+
+/* 호버 시 화살표 색상 검정색 */
+#hcg-slide-prev:hover img,
+#hcg-slide-next:hover img {
+  filter: brightness(0);
+}
+
+#hcg-slide-prev img,
+#hcg-slide-next img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* 이미지 안쪽 아래의 현재 번호 */
+.hcg-slide-number {
+  position: absolute;
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 14px;
+  z-index: 2;
+  text-shadow: 1px 1px 3px black;
+}
+
+/* 슬라이드 안에 일시정지 아이콘 */
+.pause {
+  position: absolute;
+  left: 49%;
+  bottom: 15px;
+}
+.pause:hover {
+  cursor: pointer;
+}
+
+/* 이미지 아래쪽 가운데 점 표시 */
+.hcg-slide-dot-control {
+  position: absolute;
+  left: 50.5%;
+  bottom: 15px;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: auto;
+  margin-top: 0;
+  z-index: 3;
+}
+
+.hcg-slide-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 3px solid green;
+  cursor: pointer;
+}
+
+.hcg-slide-dot.active {
+  background: transparent;
+}
+
+/* 이미지 전환 효과 */
+.hcg-slides.fade-out {
+  animation: slideFadeOut 0.2s ease;
+}
+
+.hcg-slides.fade-in {
+  animation: slideFadeIn 0.4s ease;
+}
+
+@keyframes slideFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hcg-slides.fade-effect {
+  animation: slowFade 3s ease-in-out;
+}
+
+@keyframes slowFade {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+/* 전체보기 영역 */
+.promotionArea {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(
+    to bottom,
+    #7b7c7f 0,
+    #7b7c7f 70px,
+    transparent 70px
+  );
+}
+.promotionInner {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.promotionView {
+  height: 70px;
+  line-height: 70px;
+  background: url(https://www.starbucks.co.kr/common/img/whatsnew/green_bg.jpg);
+}
+
+.promotionView p {
+  text-align: center;
+  position: relative;
+  left: 20px;
+}
+
+.promotionView img {
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+
+.promotionView a {
+  font-size: 26px;
+  color: #ffffff;
+  vertical-align: middle;
+}
+.promotionView a:hover {
+  text-decoration: underline;
+}
+
+/* 접혀 있는 기사 목록 */
+.promotionArticles {
+  position: relative;
+  z-index: 1;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  background: #ffffff;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.4s ease;
+}
+
+/* 전체보기를 눌렀을 때 */
+.promotionArea.open .promotionArticles {
+  max-height: 2000px;
+  opacity: 1;
+}
+/* 전체보기 메뉴가 숨겨져 있을 때 이미지도 숨김 */
+
+/* 메뉴가 열렸을 때 이미지 표시 */
+.edge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -14px;
+  z-index: 2;
+}
+
+/* 화살표 회전 */
+.promotionArea.open .promotionView a img {
+  transform: rotate(180deg);
+}
+
+/* 기사 4칸 배치 */
+.promotionGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 258px);
+  justify-content: space-between;
+  gap: 15px 0px;
+  padding: 55px 0px;
+}
+.promotionGrid .tit {
+  grid-column: 1 / -1;
+  font-weight: bold;
+}
+
+/* 기사 카드 */
+.articleCard {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  border: 1px solid #e1e1e1;
+}
+
+.articleCard img {
+  display: block;
+  width: 258px;
+  height: 258px;
+  object-fit: cover;
+}
+
+.articleCard p {
+  width: 258px;
+  padding: 12px 0 12px 0;
+  text-align: center;
+  vertical-align: middle;
+  height: 33px;
+}
+.articleCard p.p1 {
+  font-size: 16px;
+  color: #444444;
+  margin-bottom: 5px;
+  padding-top: 2px;
+  width: 90%;
+  margin: 0 auto;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 12px;
+}
+
+.articleCard p.p1::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-image: url("https://image.istarbucks.co.kr/upload/common/img/icon/icon_whats_new_pin.png");
+  text-align: center;
+}
+
+.articleCard p.p2 {
+  font-size: 12px;
+  margin-top: -30px;
+}
+.articleCard:hover p {
+  text-decoration: underline;
+}
+.newsArea {
+  width: 100%;
+  height: 70px;
+  position: relative;
+}
+
+.newsArea_left {
+  float: left;
+  width: 50%;
+  height: 70px;
+  background: #111;
+}
+.newsArea_right {
+  float: right;
+  width: 50%;
+  height: 70px;
+  background: url(https://image.istarbucks.co.kr/common/img/menu/useInfo_bg.jpg);
+}
+.newsArea_bg {
+  width: 1100px;
+  height: 70px;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -550px;
+  background: url(https://image.istarbucks.co.kr/common/img/menu/newsArea_bg2.jpg);
+}
+.newsArea_bgl {
+  width: 729px;
+  height: 70px;
+  line-height: 70px;
+  float: left;
+  position: relative;
+}
+.newsArea_bgl dt {
+  vertical-align: middle;
+  position: absolute;
+  left: 15px;
+  top: 26px;
+}
+.newsArea_bgl img.w_pic {
+  display: block;
+  position: static;
+  height: 17px;
+  width: auto;
+}
+.w_pic {
+  display: block;
+}
+
+.newsArea_bgl p.btn {
+  position: absolute;
+  right: 22px;
+  top: 18px;
+}
+.newsArea_bgl p.btn:hover {
+  cursor: pointer;
+}
+.newsArea_bgr {
+  width: 371px;
+  height: 70px;
+  float: right;
+  background: url(https://image.istarbucks.co.kr/common/img/menu/useInfo_app.png)
+    21px 11px no-repeat;
+  position: relative;
+}
+.newsArea_bgr p.tit {
+  position: absolute;
+  top: 18px;
+  left: 100px;
+}
+.w_pic {
+  display: block;
+}
+.newsArea_bgr p.btn {
+  position: absolute;
+  left: 321px;
+  top: 18px;
+}
+.newsArea_bgr p.btn:hover {
+  cursor: pointer;
+}
+/* 보도자료 옆 한 줄 문구 */
+.newsArea_bgl dd.newsText {
+  position: absolute;
+  left: 95px;
+  top: 18px;
+  width: 560px;
+  height: 30px;
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.newsArea_bgl dd.newsText a {
+  color: #cccccc;
+}
+
+.newsArea_bgl dd.newsText a:hover {
+  text-decoration: underline;
+}
+/* 1번 배너 */
+.bn1 {
+  width: 100%;
+  height: 430px;
+  background: url(https://www.starbucks.co.kr/common/img/whatsnew/promotion_bimg1.jpg)
+    20% 50% no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.b1_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.w_pic {
+  position: absolute;
+  top: 125px;
+  right: 480px;
+}
+.b1_txt01 {
+  width: 258px;
+  position: absolute;
+  left: 760px;
+  top: 115px;
+}
+.b1_btn01 {
+  width: 120px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  height: 35px;
+  line-height: 34px;
+  position: absolute;
+  right: 610px;
+  top: 253px;
+  color: white;
+  text-align: center;
+}
+/*  2번 배너*/
+.bn2 {
+  width: 100%;
+  height: 430px;
+  background: url(https://www.starbucks.co.kr/common/img/whatsnew/promotion_bimg2.jpg)
+    20% 50% no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.b2_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.w_pic2 {
+  position: absolute;
+  top: 125px;
+  left: 405px;
+}
+.b2_txt02 {
+  width: 258px;
+  position: absolute;
+  left: 760px;
+  top: 115px;
+}
+.b2_btn02 {
+  width: 120px;
+  border: 2px solid #222;
+  border-radius: 3px;
+  height: 35px;
+  line-height: 34px;
+  position: absolute;
+  left: 405px;
+  top: 253px;
+  text-align: center;
+}
+/* 3번 배너 */
+.bn3 {
+  width: 100%;
+  height: 430px;
+  background: url(https://www.starbucks.co.kr/common/img/whatsnew/promotion_bimg3.jpg)
+    20% 50% no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.b3_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.w_pic3 {
+  position: absolute;
+  top: 175px;
+  right: 560px;
+}
+.b3_txt03 {
+  width: 258px;
+  position: absolute;
+  left: 760px;
+  top: 115px;
+}
+.b3_btn03 {
+  width: 120px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  height: 35px;
+  line-height: 34px;
+  position: absolute;
+  right: 707px;
+  top: 300px;
+  color: white;
+  text-align: center;
+}
+/* 4번 배너 */
+.bn4 {
+  width: 100%;
+  height: 430px;
+  background: url(https://www.starbucks.co.kr/common/img/whatsnew/promotion_bimg4.jpg)
+    20% 50% no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.b4_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.w_pic4 {
+  position: absolute;
+  top: 150px;
+  left: 405px;
+}
+.b4_txt04 {
+  width: 258px;
+  position: absolute;
+  left: 760px;
+  top: 115px;
+}
+.b4_btn04 {
+  width: 120px;
+  border: 2px solid #222;
+  border-radius: 3px;
+  height: 35px;
+  line-height: 34px;
+  position: absolute;
+  left: 405px;
+  top: 280px;
+  text-align: center;
+}
+
+.b1_btn01:hover,
+.b3_btn03:hover {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #222222;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+}
+.b2_btn02:hover,
+.b4_btn04:hover {
+  cursor: pointer;
+  background-color: #222;
+  color: #fff;
+  text-decoration: underline;
+  transition: all 0.5s ease;
+}
+/* 보도자료 롤링 */
+.newsText {
+  height: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: newsUp 18s steps(1, end) infinite;
+}
+
+.newsText a {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  white-space: nowrap;
+  color: #cccccc;
+}
+
+.newsTextTrack {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsTextTrack a {
+  flex: 0 0 30px;
+}
+
+.왓츠뉴 {
+  font:
+    bold 36px Avenir,
+    Arial,
+    georgia;
+  margin-left: 400px;
+}
+
+.왓츠뉴_홈메뉴 {
+  position: relative;
+  align-items: center;
+  justify-content: right;
+  display: flex;
+  margin-bottom: 20px;
+  font-size: 12px;
+  color: #666666;
+  gap: 5px;
+  margin-right: 400px;
+}
+
+.bb:hover {
+  cursor: pointer;
+}
+
+.왓츠뉴_홈메뉴 p:hover {
+  text-decoration: underline;
+}
+
+#왓츠뉴우 {
+  font-size: 12px;
+  color: #222222;
+}
+
+.왓츠뉴 p {
+  align-items: center;
+  display: flex;
+  position: relative;
+  top: 20px;
+}

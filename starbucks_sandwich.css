@@ -1,0 +1,358 @@
+body{
+    font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+    font-size: 1em;
+    line-height: 1;
+    min-width: 320px;
+    overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+/* 전체 감싸기 */
+#wrap {
+  position: relative;
+  width: 100%;
+}
+
+/* 이벤트 배너 */
+.sub_tit_wrap {
+  width: 100%;
+  height: 98px;
+  background: #ffffff;
+}
+.sub_tit_inner {
+  width: 1100px;
+  height: 91px;
+  margin: 0 auto;
+  position: relative;
+}
+.sub_tit_wrap h2 {
+  font:
+    bold 36px Avenir,
+    Arila,
+    georgia;
+  color: #222222;
+  padding-top: 30px;
+  position: relative;
+}
+/* 이벤트 배너 오른쪽 작은것들 */
+ul.smap {
+  position: absolute;
+  right: 0;
+  top: 60px;
+}
+ul.smap .home,
+.en,
+.this{
+  cursor: pointer;
+}
+
+.en a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+li {
+  list-style: none;
+}
+ul.smap img.arrow {
+  position: relative;
+  top: 2px;
+}
+ul.smap li {
+  vertical-align: middle;
+  float: left;
+  height: 16px;
+  line-height: 16px;
+  margin: 0 2.5px;
+}
+ul.smap .en {
+  font-size: 12px;
+  color: #666666;
+}
+span.this {
+  font-size: 14px;
+  color: #666666;
+}
+/* 컨테이너 */
+#container {
+  width: 100%;
+  margin-top: 55px;
+}
+.wn_cont {
+  left: 50%;
+  margin: 0 0 0 -550px;
+  position: relative;
+  width: 1100px;
+}
+section.campaign_view_wrap {
+  position: relative;
+  margin-bottom: 60px;
+}
+/* 헤더 */
+section.campaign_view_wrap > header {
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  padding: 20px 140px 38px 20px;
+}
+/* 10월 이달의 샌드위치  */
+section.campaign_view_wrap > header h3 {
+  position: relative;
+  float: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222222;
+}
+span.date {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: normal;
+  color: #666666;
+  padding-left: 5px;
+}
+section.campaign_view_wrap > header ul.sns_wrap {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  height: 28px;
+  background: url(https://www.starbucks.co.kr/common/img/whatsnew/cpv_line.png)
+    0 0 no-repeat;
+}
+section.campaign_view_wrap > header ul.sns_wrap .sns{
+    cursor: pointer;
+}
+section.campaign_view_wrap > header ul.sns_wrap li {
+  float: left;
+  padding-left: 8px;
+}
+
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+/* 기사 본문 */
+article.campaign_view_info {
+  padding: 60px 50px 0 50px;
+}
+article.campaign_view_info_inner {
+  position: relative;
+}
+.monthlysandwich {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.m_img {
+  position: relative;
+  overflow: hidden;
+}
+.btn_campaign_wrap {
+  width: 100%;
+  height: 45px;
+  position: relative;
+  padding-top: 20px;
+}
+p.btn_campaign {
+  border-radius: 3px;
+  height: 45px;
+  width: 84px;
+  background: #666666;
+  margin-top: 20px;
+  position: absolute;
+  right: 50px;
+  top: 0;
+}
+/* 본문 밑 목록 버튼 */
+span.list {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  height: 45px;
+  line-height: 45px;
+  width: 100%;
+}
+span.list:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/* 슬라이드 */
+.slides_tit_wrap {
+  position: relative;
+  margin-bottom: 80px;
+}
+/* 슬라이드 제목 */
+.campaign_list {
+  position: relative;
+}
+dt {
+  padding: 21px;
+  background: #f4f4f2;
+  margin-bottom: 21px;
+  border-radius: 3px;
+  overflow: hidden;
+  font-size: 18px;
+  font-weight: bold;
+  color: #222222;
+}
+
+/* 슬라이드 전체 영역 */
+.slide {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  position: relative;
+}
+
+/* 사진이 보이는 영역 */
+.slideViewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 페이지 3개를 가로로 배치 */
+.slideTrack {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+/* 한 페이지에 사진 3개 */
+.slidePage {
+  flex: 0 0 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+/* 사진 */
+.slidePage img {
+  display: block;
+  max-width: 100%;
+  border-radius: 3px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+/* 슬라이드 글씨 */
+.slidePage p {
+  margin-top: 25px;
+  bottom: 0;
+  color: #444;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  width: 100%;
+  cursor: pointer;
+}
+.slidePage p span {
+  color: #666;
+  font-size: 12px;
+}
+/* 좌우 화살표 */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  border: none;
+  background: white;
+  color: #333;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.prev {
+  left: -46px;
+}
+
+.next {
+  right: -46px;
+}
+
+/* 페이지 점 */
+.slideDots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 25px;
+}
+
+/* 점 모양 */
+.dot {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+/* 현재 페이지의 점 */
+.dot.active {
+  background: url(https://www.starbucks.co.kr/common/img/common/bnr_slider_pager.png);
+}
+.pause {
+  background: url(https://www.starbucks.co.kr/common/img/common/bnr_slider_play.png)
+    right 0;
+  height: 12px;
+  width: 9px;
+  border: none;
+  cursor: pointer;
+}
+/* 화면이 좁을 때 화살표 위치 */
+@media (max-width: 1300px) {
+  .prev {
+    left: 5px;
+  }
+
+  .next {
+    right: 5px;
+  }
+}
+
+.이벤트{
+  margin-bottom: 30px;
+}
+
+.홈메뉴{
+position: relative;
+align-items: center;
+justify-content: right;
+display: flex;
+margin-bottom: 20px;
+font-size: 12px;
+color: #666666;
+gap: 5px;
+}
+
+.aa:hover{
+  cursor: pointer;
+}
+
+.홈메뉴 p:hover{
+  text-decoration: underline;
+}
+
+#event{
+  font-size: 14px;
+  color: #222222;
+  
+}
+

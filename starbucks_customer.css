@@ -1,0 +1,721 @@
+.page-header {
+  background-image: url("https://www.starbucks.co.kr/common/img/util/ms_sub_ttl_bg.jpg");
+  background-size: 2000px 178px; /*배경 이미지 크기*/
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 178px; /*배너 영역 크기*/
+  color: #fff;
+  padding: 0 20px; /*배너 영역 크기*/
+  position: static;
+  margin-top: 120px;
+  margin-left: -8px;
+  margin-right: -8px;
+}
+.page-header .inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.page-header .inner > img {
+  position: relative;
+  left: 51px;
+  top: 104px;
+}
+
+.page-header h1 {
+  position: relative;
+  left: 20px;
+  top: 30px;
+}
+.inner_right {
+  font-size: 12px;
+  position: relative;
+  left: -52px;
+  top: 99px;
+}
+
+/* 전체 콘텐츠 영역 */
+.content_group {
+  width: 1200px;
+  margin: 30px auto;
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  box-sizing: border-box;
+  margin-bottom: 100px;
+}
+
+.main_content {
+  width: 830px;
+  flex-shrink: 0;
+}
+
+/* 왼쪽 메인 콘텐츠 */
+.main_group {
+  width: 830px;
+  flex: 0 0 830px;
+  min-width: 0;
+  margin-left: 50px;
+}
+
+/* 오른쪽 사이드 메뉴 */
+.side_menu {
+  width: 220px;
+  flex: 0 0 220px;
+  box-sizing: border-box;
+
+  margin-top: 0px;
+  margin-left: 0px;
+  height: auto;
+
+  border-top: 2px solid #333;
+}
+
+/*search */
+
+.search {
+  background-image: url("https://www.starbucks.co.kr/common/img/util/csi/main_search_bg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  border-radius: 4px;
+  width: 830px;
+  height: 290px;
+  margin: 20px auto 0;
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 50px 20px;
+  box-sizing: border-box;
+}
+/* 검색 영역 내부 */
+.search_content {
+  width: 100%; /*부모 요소의 너비만큼 사용*/
+  max-width: 510px;
+}
+.search_content h2 {
+  font-size: 22px;
+  margin: 0 0 4px;
+  color: #222222;
+  position: relative;
+  left: -5px;
+  top: -3px;
+}
+.search_content > p {
+  font-size: 14px;
+  line-height: 1.3; /*줄 간격*/
+  margin: 0 0 35px;
+  color: #444444;
+  position: relative;
+  left: -5px;
+  top: -3px;
+}
+.search_box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: -3px;
+  margin-left: 10px;
+}
+.search_box input {
+  width: 400px;
+  height: 35px;
+
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  padding: 0 15px;
+  box-sizing: border-box;
+  position: relative;
+  top: 13px;
+}
+.search_box button {
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  outline: none;
+  box-shadow: none;
+
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+
+  position: relative;
+  left: 44px;
+  top: 8px;
+}
+.search_box button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.search_keywords {
+  position: static;
+  padding-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 8px 0 0 20px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.search_keywords a {
+  color: #444444;
+  text-decoration: none;
+}
+.search_keywords span {
+  color: #444444;
+}
+
+.search_keywords a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*faq*/
+
+.faq {
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-top: 30px;
+  padding: 20px;
+  width: 830px;
+  height: 269px;
+  margin-top: 32px;
+  box-sizing: border-box;
+  display: flex;
+}
+.faq_left {
+  width: 65%;
+  padding-right: 30px;
+  box-sizing: border-box;
+
+  position: relative;
+  top: -8px;
+}
+.faq_left h3,
+.faq_right h3 {
+  font-size: 18px;
+  margin: 8px 0;
+  color: #222222;
+}
+.faq_left p,
+.faq_right p {
+  font-size: 14px;
+  margin: 8px auto;
+}
+.faq_left ul {
+  font-size: 12px;
+  line-height: 2;
+  padding: 0;
+  margin: 18px;
+  list-style: disc;
+}
+.faq_left li a {
+  color: #666666;
+  text-decoration: none;
+}
+
+.faq_left li a:hover {
+  text-decoration: underline;
+}
+
+.faq_right {
+  width: 35%;
+  padding-left: 30px;
+  box-sizing: border-box;
+  border-left: 1px solid #ddd;
+
+  position: relative;
+  top: -8px;
+}
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #666666;
+  margin-top: 20px;
+  width: 100%;
+  height: 74px;
+  position: relative;
+  top: -10px;
+
+  line-height: 1;
+  text-align: center;
+}
+.login_button {
+  width: 237px;
+  height: 30px;
+
+  background-color: #e5c580;
+  border: 1px solid #c9a85e;
+  border-radius: 3px;
+
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 25px auto;
+  display: block;
+
+  position: relative;
+  top: -10px;
+}
+
+/*사이드 메뉴*/
+
+.side_menu {
+  width: 220px; /* 사이드 메뉴 너비 */
+  height: auto; /* 높이 */
+  margin-top: 22px; /* 위쪽 여백 */
+  margin-left: 10px; /* 왼쪽 여백 */
+  padding: 0px; /* 내부 여백 */
+  box-sizing: border-box;
+  align-self: stretch; /* 부모 높이에 맞춰 늘리기 */
+}
+
+.side_list,
+.accordion summary {
+  padding: 18px 14px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  font-weight: bold;
+  color: #444444;
+}
+.side_list:hover,
+.accordion summary:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #006633;
+}
+
+.content_group {
+  display: flex;
+  align-items: stretch;
+  gap: 40px;
+}
+
+/* 아코디언 컴포넌트 동작 정의 */
+
+.accordion {
+  border-bottom: 1px solid #ddd;
+}
+
+.accordion_btn {
+  width: 100%;
+  padding: 18px 14px;
+  border: none;
+  background: white;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+}
+
+.accordion_btn img {
+  width: 12px;
+  height: 7px;
+  transition: transform 0.1s ease;
+}
+
+/*화살표 상하 반전*/
+.accordion.active .accordion_btn img {
+  transform: scaleY(-1);
+}
+
+.accordion_menu {
+  max-height: 0;
+  overflow: hidden;
+
+  margin: 0;
+  padding: 0 14px 0 30px;
+  list-style: none;
+
+  background: white;
+  font-size: 13px;
+  line-height: 2;
+
+  transition:
+    max-height 0.5s ease,
+    padding 0.5s ease;
+}
+
+.accordion.active .accordion_menu {
+  max-height: 200px;
+  padding: 8px 14px 12px 30px;
+}
+
+.accordion_menu a {
+  color: #444;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.accordion_menu a:hover {
+  text-decoration: underline;
+}
+
+.accordion_btn:hover {
+  color: #006633;
+  text-decoration: underline;
+}
+
+/*홈페이지 이용팁 */
+
+/* 전체 회색 박스 */
+.home_tip {
+  width: 830px;
+  box-sizing: border-box;
+  margin-top: 32px;
+  padding: 28px 30px 44px;
+  background: #f4f4f2;
+  border-radius: 4px;
+}
+
+/* 제목과 페이지 버튼 */
+.tip_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #ddd;
+}
+
+.tip_header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #222;
+}
+
+/* 페이지 표시 및 버튼 */
+.tip_page {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+}
+
+.tip_page span {
+  margin-right: 5px;
+}
+
+.tip_page button {
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #666;
+  cursor: pointer;
+}
+
+.tip_page button:hover {
+  background: #eee;
+}
+
+/* 슬라이드 영역 */
+.tip_slider {
+  position: relative;
+  margin: 30px 45px;
+}
+
+/* 카드가 보이는 영역 */
+.tip_viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 카드 전체를 가로로 배치 */
+.tip_cards {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: transform 0.4s ease;
+}
+
+/* 카드 2개가 한 화면에 표시되도록 설정 */
+.tip_card {
+  flex: 0 0 calc((100% - 24px) / 2);
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  background: #fff;
+}
+
+/* 카드 이미지 */
+.tip_card img {
+  display: block;
+  width: 100%;
+  height: 157px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+/* 마우스를 올리면 이미지 확대 */
+.tip_card:hover img {
+  transform: scale(1.08);
+}
+
+/* 카드 제목 */
+.tip_card h3 {
+  min-height: 74px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.5;
+  color: #333;
+  cursor: pointer;
+}
+.tip_card:hover h3 {
+  text-decoration: none;
+}
+
+/* 좌우 화살표 공통 */
+.tip_arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 50px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #b5b5b5;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.tip_arrow.left {
+  left: -42px;
+}
+
+.tip_arrow.right {
+  right: -42px;
+}
+
+.tip_arrow:hover {
+  color: #555;
+}
+
+/* 화살표에 이미지가 들어가는 경우 */
+.tip_arrow img {
+  display: block;
+  width: 25px;
+  height: 40px;
+  object-fit: contain;
+}
+
+/* 하단 메뉴 3개를 가로로 배치 */
+.tip_categories {
+  width: 770px;
+  height: 143px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  padding: 18px 8px;
+  background: #fff;
+  border-radius: 3px;
+}
+
+/* 하단 메뉴 각각의 영역 */
+.tip_category {
+  flex: 1;
+  min-width: 0;
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  gap: 6px; /* 아이콘과 텍스트 간격 줄이기 */
+  padding: 0 12px;
+  box-sizing: border-box;
+}
+
+/* 메뉴 사이 구분선 */
+.tip_category + .tip_category {
+  border-left: 1px solid #ddd;
+}
+
+/* 하단 메뉴 아이콘 */
+.tip_icon {
+  flex: 0 0 78px;
+  width: 78px;
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 아이콘 이미지 */
+.tip_icon img {
+  display: block;
+  width: 78px;
+  height: 78px;
+  object-fit: contain;
+}
+
+/* 하단 메뉴 텍스트 */
+.tip_category_text {
+  flex: 1;
+  min-width: 0;
+}
+
+.tip_category h3 {
+  margin: 0 0 1px;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #444444;
+  cursor: pointer;
+}
+
+.tip_category p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.3;
+  color: #444444;
+  cursor: pointer;
+}
+/* 메뉴 영역 어디에 마우스를 올려도 텍스트 전체에 밑줄 */
+.tip_category:hover .tip_category_text {
+  text-decoration: underline;
+}
+
+/*고객문의 처리 절차 */
+
+/* 전체 테두리 박스 */
+.service_process {
+  width: 830px;
+  box-sizing: border-box;
+  padding: 26px 30px 32px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  background: #fff;
+  margin-top: 32px;
+}
+
+/* 상단 제목 */
+.service_process > h2 {
+  margin: 0 0 38px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 5개 단계를 가로로 배치 */
+.process_steps {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* 각각의 단계 */
+.process_step {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+/* 단계 아이콘 */
+.process_step img {
+  width: 114px;
+  height: 114px;
+  object-fit: contain;
+}
+
+/* Step 1, Step 2 등의 글자 */
+.step_number {
+  margin: 16px 0 14px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* 단계별 제목 */
+.process_step h3 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-decoration: none;
+}
+.process_step:first-child h3 {
+  text-decoration: underline;
+}
+
+/* 단계별 설명 */
+.step_desc {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* 하단 소비자 분쟁 해결 기준 */
+.dispute_standard {
+  margin-top: 40px;
+}
+
+.dispute_standard h2 {
+  margin: 0 0 18px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.dispute_standard p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/*사이 점선을 만들어 보자*/
+
+.process_step {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+
+/* 다음 단계로 이어지는 점선 */
+.process_step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 56px;
+  left: calc(50% + 57px);
+  width: calc(100% - 102px);
+  border-top: 3px dotted #ddd;
+  z-index: 0;
+}
+
+/* 아이콘을 점선 위에 표시 */
+.process_step img {
+  position: relative;
+  z-index: 1;
+  width: 114px;
+  height: 114px;
+  object-fit: contain;
+}

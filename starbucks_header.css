@@ -1,0 +1,220 @@
+
+* { /*전체 적용*/
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.headerbox {
+    width: 100%;
+    height: 120px;
+    background-color: #f6f5ef;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px 30px;
+    gap: 30px;
+}
+
+.logo img {
+    width: 75px;
+    height: auto;
+     position: absolute;
+    top: 22px;
+    left: 400px;
+}
+
+.headerbox {
+    position: relative;
+}
+
+.top_menu {
+    position: absolute;
+    top: 8px;
+    right: 456px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 13px;
+    white-space: nowrap;
+}
+
+.top_menu span {
+    color: #555555;
+    cursor: pointer;
+}
+
+/* 구분선 */
+.top_menu span.a {
+    color: #e6e6e6;
+    cursor: default;
+}
+
+.top_menu span:not(.a):hover {
+    text-decoration: underline;
+}
+
+
+
+.bottom_menu {
+   position: absolute;
+    top: 53px;
+    left: 690px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 13px;
+    height: 74px;
+    font-size: 13px;
+    color: #333333;
+}
+
+
+/*1. 상단 메뉴 CSS*/
+
+
+/* 각각의 메뉴 */
+.menu_item {
+    height: 66px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    white-space: nowrap; /*글자 자동 줄바꿈 방지*/
+    position: static;
+}
+
+
+/* 메뉴 글자 */
+.menu_text {
+    position: relative;
+    top: -12px;
+    left: 1px;
+}
+
+/* 메뉴 블록에 마우스를 올렸을 때 */
+.menu_item:hover {
+    background-color: #2C2A29;
+    color: #669900;
+}
+
+/* 메뉴 글자에 밑줄 */
+.menu_item:hover .menu_text {
+    text-decoration: underline;
+}
+
+
+
+
+/*2. 드롭다운 CSS*/
+
+/* 드롭다운 기본 상태 */
+.menu_dropdown {
+    position: fixed;
+    top: 119px;
+    left: 0;
+
+    width: 100%;
+    min-height: 180px; 
+    padding: 20px 15px; /*드롭다운 내부의 위아래·좌우 여백*/
+    margin: 0;
+ 
+    grid-template-columns: repeat(5, 180px); /*드롭다운 안의 각 열 너비*/
+    justify-content: center;
+    gap: 30px; /*드롭다운 안에 있는 5개 열 사이의 간격*/
+
+
+    background-color: #2C2A29;
+    color: white;
+    z-index: 100;
+
+    /* 숨겨진 상태 */
+    display: none;
+}
+/* 드롭다운이 열렸을 때 */
+.menu_dropdown.active {
+    display: grid;
+}
+
+/* 마우스를 올리면 슬라이드 다운 */
+.menu_item:hover .menu_dropdown {
+    display: grid;
+    animation: slideDown 0.35s ease forwards;
+}
+/* 위에서 아래로 펼쳐지는 애니메이션 */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        clip-path: inset(0 0 100% 0);
+    }
+
+    to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+
+
+/*3. 드롭다운 안의 글자  css*/
+
+
+/* 제목 */
+.menu_dropdown h3 {
+    margin: 0 0 14px;
+    font-size: 14px;
+    font-weight: normal;
+    color: white;
+}
+
+/* 각 항목 */
+.menu_dropdown p {
+    margin: 0 0 8px;
+    font-size: 12px;
+    color: #aaa;
+    cursor: pointer;
+}
+
+/* 항목에 마우스를 올렸을 때 */
+.menu_dropdown p:hover {
+    
+    text-decoration: underline;
+}
+.menu_dropdown h3:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+
+/* 상단 메뉴의 검색 버튼 */
+.search-btn {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-decoration: none;
+    cursor: pointer;
+    flex-shrink: 0; /*flex-shrink: 0; display: flex;로 요소들을 배치했을 때, 공간이 부족해도 해당 요소의 크기가 줄어들지 않도록 해.*/
+}
+
+/* 돋보기 이미지 */
+.search-btn img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain; /*이미지 비율을 유지하면서 영역 안에 전부 표시*/
+}
+.top_menu > span {
+    display: inline-block;
+}

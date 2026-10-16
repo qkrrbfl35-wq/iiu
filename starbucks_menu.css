@@ -1,0 +1,1015 @@
+/* 전체 콘텐츠의 기본 너비와 글자 색상 설정 */
+.container {
+  width: 75%; /* 화면 너비의 75% 사용 */
+  max-width: 1200px; /* 최대 너비 제한 */
+  margin: 0 auto; /* 좌우 중앙 정렬 */
+  color: #222222; /* 기본 글자 색상 */
+  height: auto;
+}
+
+/* 카테고리 영역의 위치 기준 설정 */
+.warp {
+  position: relative;
+  margin-top: 100px;
+  margin-bottom: 120px;
+}
+
+.g_name {
+  margin-left: 40px;
+}
+
+/* 카테고리 펼침 영역 */
+.view_categories {
+  position: absolute;
+  border: 1px solid;
+  border-color: #ddd;
+  border-radius: 5px;
+  width: 93%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 240px;
+  left: 50%;
+  transform: translateX(-50%); /* 가로 중앙 정렬 */
+  box-sizing: border-box;
+}
+
+/* 카테고리 영역 안의 체크박스 설명 정렬 */
+.view_categories label {
+  line-height: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-right: 5px;
+}
+
+/* 카테고리 접기 버튼 이미지 */
+.view_close {
+  display: flex;
+  margin-left: auto; /* 오른쪽으로 배치 */
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+/* 마우스를 올리면 밑줄 표시 */
+.hov:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* 마우스를 올리면 클릭 가능한 커서 표시 */
+.hov2:hover {
+  cursor: pointer;
+}
+
+/* 체크박스 설명에 마우스를 올리면 클릭 가능한 커서 표시 */
+.menu_check + span:hover {
+  cursor: pointer;
+}
+
+/* 카테고리 영역의 제목 부분 */
+.top_letter {
+  font-size: 20px;
+  border-bottom: 1px solid;
+  border-color: #ddd;
+  margin: 0 auto;
+  width: 95%;
+  height: 30%;
+  display: flex;
+}
+
+/* 제목 영역 안의 설명 글자 크기 */
+.top_letter span {
+  font-size: 15px;
+}
+
+/* 카테고리 제목의 여백 설정 */
+.top_letter h3 {
+  margin: 0;
+  margin-top: 25px;
+}
+
+/* 카테고리 및 테마 버튼 공통 디자인 */
+.btn {
+  width: 200px;
+  height: 35px;
+  left: 30px;
+  top: 30px;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+/* 버튼에 마우스를 올리면 밑줄 표시 */
+.btn:hover {
+  text-decoration: underline;
+}
+
+/* 페이지의 메인 제목 '음료' 디자인 */
+.name {
+  position: relative;
+  top: 10px;
+  margin-left: 40px;
+  margin-top: 40px;
+  font-size: 30px;
+}
+
+/* 상단 오른쪽의 홈 아이콘 및 경로 표시 */
+.icon_home {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  width: 93%;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  font-size: 13px;
+}
+
+/* 카테고리 체크박스 기본 디자인 */
+.menu_check {
+  cursor: pointer;
+  appearance: none; /* 브라우저 기본 체크박스 모양 제거 */
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 1px solid rgb(210, 210, 210);
+  border-radius: 0;
+  background-color: white;
+  margin: 0;
+  flex-shrink: 0;
+  color: #006633;
+  line-height: 15px;
+  display: -ms-inline-grid;
+  place-content: center;
+  margin-left: 20px;
+}
+
+/* 체크박스를 선택하면 초록색 체크 표시 */
+.menu_check:checked::after {
+  content: "✓";
+  display: block;
+  color: #006633;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* 카테고리를 접었을 때 표시되는 축소 영역 */
+.close_categories {
+  display: none; /* 처음에는 숨김 */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 1px solid;
+  border-color: #ddd;
+  border-radius: 5px;
+  width: 93%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  height: 72px;
+  z-index: 2;
+}
+
+/* 축소된 카테고리 영역의 제목 높이 */
+.close_categories .top_letter {
+  height: 100%;
+}
+
+/* 축소 영역 안의 제목 글자 크기 */
+.close_view span {
+  font-size: 15px;
+}
+
+/* 사진 보기 및 영양정보 보기 버튼 영역 */
+.select {
+  display: flex;
+  width: 93%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  align-items: center;
+  margin-top: 290px; /* 펼쳐진 카테고리 영역 아래에 배치 */
+}
+
+/* 상세분류 버튼 디자인 */
+.detail_select {
+  display: flex;
+  margin-left: auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  box-sizing: border-box;
+  height: 35px;
+  padding: 0 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* 카테고리를 접으면 보기 버튼 영역의 위쪽 여백 축소 */
+.select.closed {
+  margin-top: 120px;
+}
+
+/* 사진으로 보기 버튼의 기본 디자인 */
+.select_1 {
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 0 9px 0 10px;
+  background-color: #666666;
+  color: white;
+  margin-right: 18px;
+  cursor: pointer;
+}
+
+/* 사진 보기 버튼에 마우스를 올리면 밑줄 표시 */
+.select_1:hover {
+  text-decoration: underline;
+}
+
+/* 영양정보로 보기 버튼의 기본 디자인 */
+.select_2 {
+  display: block;
+  height: 26px;
+  line-height: 26px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 0 9px 0 10px;
+  background-color: #fff;
+  color: #666666;
+  cursor: pointer;
+}
+
+/* 영양정보 버튼에 마우스를 올리면 밑줄 표시 */
+.select_2:hover {
+  text-decoration: underline;
+}
+
+/* 음료 분류 제목 영역의 공통 디자인 */
+.brudu {
+  width: 93%;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  margin-top: 20px;
+  display: flex;
+  border: 0px solid;
+  background-color: #f4f4f2;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 음료 분류 제목 글자 디자인 */
+.brudu h3 {
+  font-size: 18px;
+  margin-left: 20px;
+  color: #444444;
+}
+
+/* 분류 제목 옆 아이콘 영역 */
+.brudu_sajin {
+  display: flex;
+  width: 60px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 음료 상품을 4열 그리드로 배치 */
+.coffee {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  width: 93%;
+  margin: 20px auto 0;
+  box-sizing: border-box;
+  align-items: start;
+}
+
+/* 개별 음료 상품 영역 */
+.coffee_menu {
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* 음료 이미지의 정사각형 표시 영역 */
+.coffee_img_box {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 가로와 세로 비율을 1:1로 설정 */
+  overflow: hidden; /* 이미지가 영역 밖으로 나가지 않도록 설정 */
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* 상품 이미지가 영역을 꽉 채우도록 설정 */
+.coffee_img_box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 이미지 비율을 유지하며 영역 채우기 */
+  margin: 0;
+  transform: scale(1);
+  transition: transform 0.8s ease; /* 확대 효과를 부드럽게 적용 */
+}
+
+/* 이미지에 마우스를 올리면 확대 */
+.coffee_img_box:hover img {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+/* 상품명 글자 디자인 */
+.coffee_menu p {
+  margin: 10px 0;
+  font-size: 14px;
+  text-align: center;
+  color: #444444;
+}
+
+/* 음료 목록 전체 영역 */
+.drink_section {
+  width: 100%;
+}
+
+/* 상세분류 옵션 목록 */
+.detail_options {
+  display: none; /* 버튼을 누르기 전에는 숨김 */
+  position: absolute;
+  top: 100%; /* 상세분류 버튼 바로 아래에 배치 */
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #f4f4f2;
+  border-radius: 3px;
+  z-index: 10; /* 다른 요소보다 앞에 표시 */
+}
+
+/* 상세분류 옵션의 체크박스와 글자 정렬 */
+.detail_options label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  padding: 9px;
+  margin: 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 옵션 사이에 구분선 표시 */
+.detail_options label + label {
+  border-top: 1px solid #f4f4f2;
+}
+
+/* 상세분류 체크박스 디자인 */
+.detail_options input {
+  cursor: pointer;
+  accent-color: #006633; /* 체크 표시의 강조 색상 */
+  flex-shrink: 0;
+}
+
+/* 보기 버튼 영역의 위치 기준 설정 */
+.select {
+  position: relative;
+}
+
+/* 상세분류 버튼과 옵션 목록을 묶는 영역 */
+.detail_wrap {
+  position: relative;
+  margin-left: auto;
+  width: 250px;
+  flex-shrink: 0;
+}
+
+/* 상세분류 체크박스의 기본 모양 */
+.sanse {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* 체크박스를 선택했을 때 테두리 색상 변경 */
+.sanse:checked {
+  background-color: #fff;
+  border-color: #006633;
+}
+
+/* 체크박스 선택 시 초록색 체크 표시 */
+.sanse:checked::after {
+  content: "✓";
+  display: block;
+  color: #006633;
+  font-size: 13px;
+  text-align: center;
+  line-height: 14px;
+}
+
+/* 사진 보기와 영양정보 보기 영역의 너비 설정 */
+#photoView,
+#nutritionView {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ==============================
+   영양정보 화면 디자인
+   ============================== */
+
+/* 영양정보 분류 제목 영역 */
+.nutrition_header {
+  width: 93%;
+  height: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  margin-top: 20px;
+  display: flex;
+  border: 0px solid;
+  background-color: #f4f4f2;
+  align-items: center;
+  gap: 10px;
+}
+
+/* 영양정보 분류 제목 글자 */
+.nutrition_header h2 {
+  margin: 0;
+  font-size: 18px;
+  margin-left: 20px;
+  color: #444444;
+}
+
+/* 영양정보 표를 포함하는 콘텐츠 영역 */
+.nutrition_content {
+  width: 93%;
+  margin: 20px auto;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+/* 영양정보 안내 문구와 일반 문단 */
+.nutrition_content p {
+  margin: 0;
+  padding: 15px 10px;
+  border-bottom: 1px solid #666666;
+  font-size: 15px;
+}
+
+/* 사이즈 기준 안내 문구를 오른쪽 정렬 */
+.nutrition_note {
+  text-align: right;
+  border-bottom: none !important;
+}
+
+/* 영양정보 표의 너비 설정 */
+.nutrition_table {
+  width: 100%;
+}
+
+/* 영양정보 데이터 한 행의 기본 레이아웃 */
+.nutrition_row {
+  display: grid;
+  grid-template-columns: 2fr repeat(6, 1fr);
+  align-items: center;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 영양정보 각 셀의 여백과 글자 크기 */
+.nutrition_row span {
+  padding: 15px 5px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  min-width: 0;
+  overflow-wrap: anywhere; /* 필요한 경우 긴 글자 줄바꿈 */
+}
+
+/* 각 행의 첫 번째 셀은 왼쪽 정렬 */
+.nutrition_row span:first-child {
+  text-align: left;
+}
+
+/* 영양정보 제목에 굵은 글씨 적용 */
+.nutrition_title {
+  font-weight: bold;
+  background-color: #f4f4f2;
+}
+
+/* 콘텐츠의 첫 번째 문단을 안내 문구 스타일로 설정 */
+.nutrition_content p:first-child {
+  text-align: right;
+  color: #666666;
+  font-size: 18px;
+}
+
+/* 리프레셔 영양정보 표의 간격 설정 */
+#nutritionView #nutritionRefresher {
+  margin-top: 60px;
+}
+
+/* 리프레셔 제목 영역의 불필요한 위쪽 여백 제거 */
+#nutritionView #nutritionRefresher .nutrition_header {
+  margin-top: 0;
+}
+
+/* 리프레셔 표의 위쪽 여백 설정 */
+#nutritionView #nutritionRefresher .nutrition_content {
+  margin-top: 20px;
+}
+
+/* 브루드 커피와 리프레셔 상품 영역 사이의 간격 */
+#photoView .drink_section + .drink_section {
+  margin-top: 50px;
+}
+
+/* 브루드 커피 영양정보 콘텐츠의 여백 설정 */
+#nutritionView #nutritionBrewed .nutrition_content {
+  margin-top: 20px;
+  margin-bottom: 0;
+  min-height: 0;
+}
+
+/* 영양정보 표의 너비와 가로 스크롤 설정 */
+.nutrition_table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* 영양정보 표 제목과 데이터 행의 공통 열 구조 */
+.nutrition_row,
+.nutrition_row_nutrition_title {
+  display: grid;
+  grid-template-columns: 260px repeat(6, minmax(85px, 1fr));
+  min-width: 770px; /* 좁은 화면에서도 열 너비 유지 */
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+/* 표 셀의 공통 여백 및 글자 정렬 */
+.nutrition_row span,
+.nutrition_row_nutrition_title span {
+  box-sizing: border-box;
+  min-width: 0;
+  padding: 12px 8px;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  line-height: 1.5;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* 표의 첫 번째 열에 왼쪽 여백 적용 */
+.nutrition_row span:first-child,
+.nutrition_row_nutrition_title span:first-child {
+  text-align: center;
+  padding-left: 12px;
+}
+
+/* 영양정보 표 제목 행의 굵은 글씨와 구분선 */
+.nutrition_row_nutrition_title {
+  font-weight: bold;
+  border-bottom: 1px solid #ccc;
+}
+
+/* 영양정보 표 제목의 배경 및 위아래 테두리 */
+.nutrition_title {
+  border-top: 1px solid #666666;
+  border-bottom: 1px solid #666666;
+  background-color: #fff;
+}
+
+/* 표 제목 셀의 위아래 구분선과 굵은 글씨 */
+.nutrition_row_nutrition_title span {
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+  font-weight: bold;
+}
+
+/* 표 셀의 글자가 한 줄로 표시되도록 설정 */
+.nutrition_row_nutrition_title span,
+.nutrition_row span {
+  box-sizing: border-box;
+  padding: 12px 8px;
+  white-space: nowrap;
+  text-align: center;
+  border-bottom: none;
+}
+
+/* 표의 첫 번째 열 글자 정렬 */
+.nutrition_row_nutrition_title span:first-child,
+.nutrition_row span:first-child {
+  text-align: center;
+  padding-left: 12px;
+}
+
+/* 리프레셔 메뉴 이름 셀의 정렬 */
+#refresher_name {
+  text-align: center !important;
+  justify-self: stretch;
+}
+
+/* 리프레셔 메뉴 이름의 줄바꿈 설정 */
+.nutrition_row span#refresher_name {
+  text-align: center !important;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 영양정보 화면의 첫 번째 리프레셔 영역 위쪽 여백 */
+#nutritionView #nutritionRefresher:first-child {
+  margin-top: 20px;
+}
+
+/* ==============================
+   브루드 클릭 화면 디자인
+   ============================== */
+
+#coffeeDetail {
+  width: 93%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 455px;
+}
+
+/* 왼쪽 사진 전체 영역 */
+.burudu_images {
+  width: 40%;
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+/* 큰 사진 영역 */
+.burudu_main_img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  position: relative;
+}
+
+/* 큰 사진 */
+#burudu_1 {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* 마우스를 따라다니는 네모 영역 */
+.zoom_lens {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 70%;
+  height: 50%;
+  background-color: rgba(255, 255, 255, 0.35);
+  border: 1px solid #888;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+/* 오른쪽 확대 사진 창 */
+.zoom_result {
+  position: absolute;
+  left: calc(100% + 25px);
+  top: 0;
+  width: var(--zoom-width, 300px);
+  height: 100%;
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: 0 0;
+  background-size: 200% 200%;
+  overflow: hidden;
+  display: none;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* 브루드 커피 큰 사진 안의 돋보기 */
+#dotbogi {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  right: 15px;
+  bottom: 15px;
+  margin: 0;
+  pointer-events: none;
+}
+/* 작은 사진 영역 */
+.burudu_bottom {
+  margin-top: 11px;
+}
+/* 브루드 커피 글자 메인 */
+.burudu_name {
+  flex: 1;
+  min-width: 0;
+  width: auto;
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+}
+/* 브루드 커피 글자 아랫선 */
+.burudu_line {
+  width: 100%;
+  margin-top: 12px;
+  border-bottom: 2px solid #555;
+  box-sizing: border-box;
+}
+/* 브루드 커피 글자 */
+.burudu_name span:nth-of-type(1) {
+  font-size: 23px;
+}
+/* 왜인지 모를 버그로 브루드커피 글자 따로설정 */
+#im_burudu {
+  font-size: 23px;
+  font-weight: 600;
+}
+/* 브루드 커피 작은 글자 */
+.burudu_name span:nth-of-type(2) {
+  display: inline-block;
+  font-size: 14px;
+  color: #616161;
+}
+/* 브루드 커피 설명글 */
+.burudu_name p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin: 15px 0;
+  word-break: keep-all;
+}
+/* 브루드 커피 제품영양정보 */
+.burudu_info {
+  display: flex;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  width: 100%;
+  min-height: 40px;
+  line-height: normal;
+  padding: 20px 0;
+  margin-top: 10px;
+  box-sizing: border-box;
+}
+/* 제품 영양정보 모든글자 */
+.burudu_info span:nth-child(1),
+.burudu_info span:nth-child(2) {
+  font-size: 18px;
+  margin: 0;
+  color: black;
+}
+/* 제품 영양정보 왼쪽글자 */
+.burudu_info span:nth-child(1) {
+  margin-left: 10px;
+}
+/* 제품 영양정보 오른쪽글자 */
+.burudu_info span:nth-child(2) {
+  margin-left: 405px;
+}
+
+/* 영양상세 메인 */
+.burudu_kal {
+  line-height: 35px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+}
+/* 영양상세 왼쪽 */
+.kal_left {
+  /* 점선 상세설정 */
+  border-right: none;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #ddd 0px,
+    #ddd 2px,
+    transparent 3px,
+    /* 점선 한칸의 길이 */ transparent 5px /* 점선사이의 간격 */
+  );
+  background-repeat: no-repeat;
+  background-size: 1px 100%;
+  background-position: right top;
+
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+/* 영양상세 오른쪽 */
+.kal_right {
+  display: flex;
+  width: 50%;
+  justify-content: space-between;
+}
+/* 왼쪽 숫자에 오른쪽 여백 */
+.kal_left div:nth-child(2) {
+  margin-right: 8px;
+}
+/* 오른쪽 숫자 오른쪽정렬 */
+.kal_right div:nth-child(2) {
+  text-align: right;
+}
+/* 오른쪽 글자에 왼쪽 여백 */
+.kal_right div:nth-child(1) {
+  margin-left: 8px;
+}
+/* 나만의 음료로 등록 */
+.like_coffee {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99.5%;
+  height: 40px;
+  border: 1px solid #666;
+  border-radius: 5px;
+  font-size: 15px;
+  color: black;
+}
+/* 나만의 음료로 등록 핱뚜 */
+.like_coffee img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+/* 나만의 음료로 등록 호버 */
+.like_coffee:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+/* 바리스타 배너 */
+#barisuta {
+  display: block;
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-top: 28px;
+  box-sizing: border-box;
+}
+/* 바리스타 배너 호버 */
+#barisuta:hover {
+  cursor: pointer;
+}
+/* 작은 브루드 사진 */
+#small_burudu {
+  display: block;
+  width: 25%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 작은 브루드 사진 */
+#small_burudu:hover {
+  cursor: pointer;
+}
+
+/* 홈>메뉴 이런거 호버 */
+.icon_home img,
+.icon_home span {
+  cursor: pointer;
+}
+.icon_home span:hover {
+  text-decoration: underline;
+}
+/* 마지막줄 밑줄 */
+.finisi {
+  position: absolute;
+  width: 58.2%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid #ddd;
+  margin-top: 625px;
+  line-height: 100px;
+  font-size: 14px;
+  color: #666666;
+}
+/* 마지막 배경 내용 메인 */
+.finisi_maji {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 280px;
+  margin: 0 auto;
+  top: 1120px;
+  border: 1px;
+  background-color: #f4f4f2;
+  left: 0;
+}
+/* 마지막 배경 내용 사이즈 */
+.maji_size {
+  display: flex;
+  width: 60%;
+  align-items: stretch;
+  justify-content: center;
+  margin: 0 auto;
+}
+/* 마지막 왼쪽 메인 정렬 */
+.maji_left,
+.maji_photo_left,
+.maji_left_letter {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+/* 마지막 왼쪽 메인 */
+.maji_left {
+  display: flex;
+  width: 50%;
+  height: 220px;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+  align-items: start;
+  justify-content: left;
+  position: relative;
+}
+/* 세로 보더 */
+.maji_left::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 13px;
+  height: 140px;
+  width: 1px;
+  background-color: #ddd;
+}
+
+/* 마지막 오른쪽 메인 */
+.maji_right {
+  display: flex;
+  width: 50%;
+  height: 220px;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+}
+/* 마지막 왼쪽 사진 */
+.maji_photo_left {
+  margin-bottom: 20px;
+  margin-left: 190px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+/* 마지막 오른쪽 사진 */
+.maji_photo {
+  margin-left: 33px;
+  margin-right: 30px;
+  display: block;
+  margin-bottom: 20px;
+}
+/* 마지막 왼쪽 글자 */
+.maji_left_letter {
+  display: block;
+  line-height: 10px;
+}
+/* 마지막 왼쪽 글자 상세수정 */
+.maji_left_letter p:nth-child(1) {
+  font-size: 20px;
+}
+.maji_left_letter p:nth-child(2) {
+  font-size: 15px;
+}
+/* 마지막 오른쪽 글자 */
+.maji_right_letter {
+  line-height: 22px;
+}
+/* 마지막 오른쪽 글자 상세수정 */
+.maji_right_letter p:nth-child(1) {
+  font-size: 20px;
+}
+.maji_right_letter p:nth-child(2) {
+  font-size: 15px;
+}

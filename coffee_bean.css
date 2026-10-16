@@ -1,0 +1,590 @@
+.container {
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+}
+
+/* ==========================================================================
+   서브 타이틀 영역 ("커피" 타이틀 & smap 네비게이션)
+   ========================================================================== */
+.sub_tit_wrap {
+  width: 100%;
+  height: 98px;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 110px;
+}
+.sub_tit_inner {
+  width: 1100px;
+  height: 98px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 좌측에 "커피", 우측에 smap 완벽 정렬 */
+  position: relative;
+}
+.sub_tit_inner h2 {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.sub_tit_inner h2 img,
+.subWrapImg {
+  display: block;
+  height: auto;
+}
+.smap {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #666666;
+  padding: 0;
+  margin: 0;
+  gap: 6px;
+}
+.smap li {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  color: #666666;
+}
+.smap li img {
+  vertical-align: middle;
+}
+/* ==========================================================================
+   본문 콘텐츠 영역 및 분류보기 박스
+   ========================================================================== */
+.coffee_content {
+  width: 1100px;
+  position: relative;
+  margin: 0 auto;
+}
+.product_kind_wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  overflow: hidden;
+  padding: 0 30px; /* 좌우 30px 여백을 주어 안쪽 요소와 선을 띄움 */
+}
+/* 분류보기 하단 원두 종류 */
+.product_kind_tab {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  margin-bottom: 24px;
+  padding: 0;
+}
+
+/* 라디오 안보이게하기 */
+.product_kind_tab input[type="radio"] {
+  display: none;
+}
+
+.product_kind_tab label {
+  display: block;
+  width: 140px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  background-color: #f4f4f2;
+  color: #666666;
+  border-radius: 3px;
+  cursor: pointer;
+
+  user-select: none;
+  /* transition:
+    background-color 0.2s,
+    color 0.2s; */
+}
+.product_kind_tab label:hover {
+  text-decoration: underline;
+}
+
+.product_kind_tab input[type="radio"]:checked + label {
+  background-color: #006633;
+  color: #ffffff;
+}
+
+.filter_wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font-size: 13px;
+  color: #444444;
+}
+
+.filter_wrap label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: initial;
+
+  user-select: none;
+}
+
+.filter_wrap input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 1px solid #d2d2d2;
+  border-radius: 0;
+  background-color: #ffffff;
+  margin: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.filter_wrap input[type="checkbox"]:checked {
+  border-color: #006633;
+}
+
+.filter_wrap input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 3.5px;
+  height: 6.5px;
+  border: solid #006633;
+  border-width: 0 1.8px 1.8px 0;
+}
+
+/* 체크박스 스위치 */
+#toggle-kind {
+  display: none;
+}
+/* 헤더 배치 */
+.product_kind_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0; /* 위아래 여백만 유지하고 좌우는 0 */
+  user-select: none;
+}
+
+.product_kind_header > .tit {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222222;
+}
+
+/* 버튼 크기 */
+.product_kind_btn img {
+  width: 42px;
+  height: 42px;
+  display: block;
+}
+/* 버튼 상호작용 - 닫혀있는 기본상태*/
+.product_kind_btn .btn_down {
+  display: block;
+}
+.product_kind_btn .btn_up {
+  display: none;
+}
+/* 버튼 누르기 */
+.product_kind_btn {
+  cursor: pointer;
+  display: inline-block;
+}
+/* 버튼 상호작용 - 열려있는 상태 */
+
+#toggle-kind:checked ~ .product_kind_header .btn_down {
+  display: none;
+}
+#toggle-kind:checked ~ .product_kind_header .btn_up {
+  display: block;
+}
+
+/* 아코디언 페이지 */
+/* 닫혀있을 때 */
+.product_toggle_wrap {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0;
+}
+
+/* 열려있을때 */
+#toggle-kind:checked ~ .product_toggle_wrap {
+  max-height: 500px;
+  opacity: 1;
+  padding: 20px 0 30px 0;
+  border-top: 1px solid #dddddd;
+}
+
+/* 상세분류 드롭박스 */
+
+/* 전체를 우측으로 정렬 */
+.detail_filter_section {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-bottom: 35px; /* 드롭다운이 열려도 아래 블론드 로스트와 여유있게 유지 */
+  position: relative;
+  z-index: 50;
+}
+.detail_select_wrap {
+  position: relative;
+  width: 246px;
+  user-select: none;
+}
+/* 토글 체크박스는 숨김 */
+#toggle-detail {
+  display: none;
+}
+/* 1. 상세분류 버튼 기본 모양 */
+.detail_select_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 38px;
+  padding: 0 14px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #444444;
+  transition: border-color 0.2s;
+}
+.detail_select_header:hover {
+  border-color: #bbbbbb;
+}
+/* 화살표 모양 (v) */
+.detail_arrow {
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #666666;
+  border-bottom: 2px solid #666666;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-top: -3px;
+}
+/* 2. 클릭 시 (열렸을 때) */
+#toggle-detail:checked ~ .detail_select_header {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+/* 열렸을 때 화살표 회전 (^) */
+#toggle-detail:checked ~ .detail_select_header .detail_arrow {
+  transform: rotate(-135deg);
+  margin-top: 3px;
+}
+/* 3. 아래로 펼쳐지는 드롭다운 옵션 목록 (기본 숨김) */
+.detail_opt_list {
+  position: absolute;
+  top: 37px;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-top: none;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  z-index: 100;
+}
+/* 열렸을 때 목록 노출 */
+#toggle-detail:checked ~ .detail_opt_list {
+  display: block;
+}
+/* 드롭다운 각 줄 항목 */
+.detail_opt_list li {
+  border-top: 1px solid #eeeeee;
+  padding: 10px 14px;
+}
+.detail_opt_list li label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #444444;
+  cursor: pointer;
+}
+/* 4. 드롭다운 내부 체크박스 (방금 맞춘 14px 정밀 스타일) */
+.detail_opt_list input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  box-sizing: border-box;
+  border: 1px solid #d2d2d2;
+  background-color: #ffffff;
+
+  position: relative;
+  margin: 0;
+  flex-shrink: 0;
+}
+.detail_opt_list input[type="checkbox"]:checked {
+  border-color: #006633;
+}
+.detail_opt_list input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 44%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  width: 3.5px;
+  height: 6.5px;
+  border: solid #006633;
+  border-width: 0 1.8px 1.8px 0;
+}
+/* 5. 상세분류 드롭다운 내부 스타벅스 NEW / 시즌한정 원형 뱃지 이미지 크기 */
+.detail_opt_list .badge_icon {
+  width: 21px;
+  height: 21px;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   원두 리스트 섹션 (스타벅스 공식 규격화)
+   ========================================================================== */
+
+/* 전체 리스트 컨테이너 */
+.product_list {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  height: auto;
+}
+
+/* 카테고리 헤더 공통 스타일 (블론드, 미디엄, 다크, 리저브) */
+.blond,
+.medium,
+.dark,
+.reserve {
+  width: 100%;
+  height: 58px;
+  box-sizing: border-box;
+  background-color: #f4f4f2;
+  background-position: 20px center;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 75px; /* 배경 아이콘(35px)과 텍스트 사이 약 20px 넉넉한 여백 */
+}
+
+.blond {
+  background-image: url("https://www.starbucks.co.kr/common/img/coffee/icon_blond.png");
+}
+.medium {
+  background-image: url("https://www.starbucks.co.kr/common/img/coffee/icon_medium.png");
+  margin-top: 60px;
+}
+.dark {
+  background-image: url("https://www.starbucks.co.kr/common/img/coffee/icon_dark.png");
+  margin-top: 60px;
+}
+.reserve {
+  background-image: url("https://www.starbucks.co.kr/common/img/coffee/icon_reserve_bean.png");
+  margin-top: 60px;
+}
+
+.text_blond,
+.text_medium,
+.text_dark,
+.text_reserve {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222222;
+}
+
+/* 각 로스트별 상품 그리드 목록 (한 줄 4개 정렬) */
+.product_list_blond,
+.product_list_medium,
+.product_list_dark,
+.product_list_reserve {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1120px;
+  margin: 0 0 30px -10px;
+  padding: 0;
+  list-style: none;
+  height: auto;
+}
+
+/* 원두 카드 공통 규격 */
+.coffeeDataSet {
+  width: 260px;
+  margin: 10px;
+  list-style: none;
+  position: relative;
+}
+
+/* 원두 카드의 내부 래퍼 (줌인 효과를 위해 overflow: hidden) */
+.coffeeDataSet > div {
+  width: 260px;
+  position: relative;
+  overflow: hidden; /* 이미지 확대 시 카드 밖으로 삐져나가지 않도록 마스킹 */
+  background-color: #ffffff;
+  border-radius: 3px;
+}
+
+/* 원두 메인 이미지 (공식 홈페이지 규격: 260x245 마스킹, 기본 상태 및 줌 애니메이션) */
+.coffeeDataSet img:not(.badge_icon) {
+  width: 260px;
+  height: 245px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  transition: transform 1s ease;
+  -webkit-transition: -webkit-transform 1s ease;
+  cursor: pointer;
+}
+
+/* 마우스 호버 시 부드러운 줌인 효과 */
+.coffeeDataSet:hover img:not(.badge_icon) {
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+/* 시즌한정 / NEW 뱃지 아이콘 (공식 홈페이지 규격: 44px, 좌측 9px, 텍스트 상단 10px 지점) */
+.coffeeDataSet .badge_icon {
+  position: absolute;
+  left: 9px;
+  bottom: 64px;
+  width: 44px;
+  height: 44px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+/* 상품명 텍스트 박스 */
+.coffeeDataSet div[class$="_text"] {
+  width: 260px;
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+  font-size: 14px;
+  color: #444444;
+  background-color: #ffffff;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   분류 보기 중복 필터링 기능 (순수 HTML + CSS - :has() 선택자 활용)
+   ========================================================================== */
+
+/* 1. 하나 이상의 개별 체크박스가 체크되어 있을 때, 체크되지 않은 카테고리를 각각 숨김 (중복 선택 지원) */
+
+/* 블론드가 체크되지 않았으면 블론드 숨김 */
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_blond:checked))
+  .blond,
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_blond:checked))
+  .product_list_blond {
+  display: none !important;
+}
+
+/* 미디엄이 체크되지 않았으면 미디엄 숨김 */
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_medium:checked))
+  .medium,
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_medium:checked))
+  .product_list_medium {
+  display: none !important;
+}
+
+/* 다크가 체크되지 않았으면 다크 숨김 */
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_dark:checked))
+  .dark,
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_dark:checked))
+  .product_list_dark {
+  display: none !important;
+}
+
+/* 리저브가 체크되지 않았으면 리저브 숨김 */
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_reserve:checked))
+  .reserve,
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_reserve:checked))
+  .product_list_reserve {
+  display: none !important;
+}
+
+/* 상단 마진 자동 보정 (첫 번째로 노출되는 카테고리가 블론드가 아닐 때 위 여백 제거) */
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_blond:checked)):has(#filter_medium:checked)
+  .medium {
+  margin-top: 0;
+}
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_blond:checked)):not(:has(#filter_medium:checked)):has(
+    #filter_dark:checked
+  )
+  .dark {
+  margin-top: 0;
+}
+.coffee_content:has(
+    .filter_wrap input[type="checkbox"]:not(#filter_all):checked
+  ):not(:has(#filter_blond:checked)):not(:has(#filter_medium:checked)):not(
+    :has(#filter_dark:checked)
+  ):has(#filter_reserve:checked)
+  .reserve {
+  margin-top: 0;
+}
+
+/* 플레이버 / 플레이버 라떼 단독 선택 시 (현재 등록된 상품이 없으므로 전체 숨김) */
+.coffee_content:has(#filter_flavor:checked, #filter_flavor_latte:checked):not(
+    :has(
+      #filter_blond:checked,
+      #filter_medium:checked,
+      #filter_dark:checked,
+      #filter_reserve:checked
+    )
+  )
+  .product_list
+  > div,
+.coffee_content:has(#filter_flavor:checked, #filter_flavor_latte:checked):not(
+    :has(
+      #filter_blond:checked,
+      #filter_medium:checked,
+      #filter_dark:checked,
+      #filter_reserve:checked
+    )
+  )
+  .product_list
+  > ul {
+  display: none !important;
+}
